@@ -1,5 +1,5 @@
 import Navigation from './components/Navigation'
-import { Space_Grotesk } from '@next/font/google'
+import { Space_Grotesk } from "next/font/google"
 import '../../styles/globals.css'
 
 export const metadata = {
@@ -9,7 +9,8 @@ export const metadata = {
 
 const font = Space_Grotesk({
   weight: ["400", "700"],
-  subsets: ['latin']
+  subsets: ['latin'],
+  variable: '--font-grotesk'
 })
 
 export default function RootLayout({
@@ -19,7 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      {/* <body className={font.className}> to use directly in body*/}
+      <body className={font.variable}>
         <Navigation />
         {children}
       </body>
